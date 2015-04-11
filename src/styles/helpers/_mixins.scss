@@ -1,0 +1,67 @@
+// *************
+// Layout mixins
+// *************
+
+@mixin maxWidth{
+	max-width: 1400px;
+	padding: 60px;
+	margin: 0 auto;
+	
+	@media #{$break-mid} {
+		padding: 20px;
+	}
+}
+@mixin overlay{
+	display: block;
+	position: relative;
+	z-index: 1;
+
+	&:after{
+		background:rgba(2,15,23,.65);
+		content: "";
+		width:100%;
+		height:auto;
+		position: absolute;
+		z-index:-1;  
+		top:0;
+		right:0;
+		left:0;
+		bottom:0;
+	}
+}
+@mixin margin-standard{
+	margin:1.2rem 0; 
+}
+
+
+
+
+// *************
+// Typography mixins
+// *************
+@mixin serif{
+	font-family: $serif;
+	font-weight:100;
+}
+
+@mixin sans-serif{
+	font-family: $sans-serif;
+	font-weight:100;
+}
+
+
+
+
+// *************
+// Transition mixins
+// *************
+@mixin transitionShort{
+	-webkit-transition:all 0.1s ease-in-out;
+	   -moz-transition:all 0.1s ease-in-out;
+	        transition:all 0.1s ease-in-out;
+}
+@mixin transitionLong{
+	-webkit-transition:all 0.3s ease-in-out;
+	   -moz-transition:all 0.3s ease-in-out;
+	        transition:all 0.3s ease-in-out;
+}

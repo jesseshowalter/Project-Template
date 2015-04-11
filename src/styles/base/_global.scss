@@ -1,0 +1,39 @@
+// -------------------------------
+// Global Site Styles
+// -------------------------------
+*{ box-sizing: border-box; }
+
+body{ background: white; }
+
+.wrapper{ 
+	@include clearfix;
+	@include maxWidth;
+}
+
+section{ clear: both; }
+
+img{ width: 100%; }
+
+::selection 	{ background: lighten($primary-color, 10%); color: white; } /* Safari */ 
+::-moz-selection { background:lighten($primary-color, 10%);  color: white; } /* Firefox */
+
+
+// -------------------------------
+// Global Link Styles
+// -------------------------------
+a:link, a:visited{ text-decoration: none; @include transitionShort; }
+
+p a:link, p a:visited{
+	position: relative;
+	text-decoration: none;
+}
+p a:hover, p a:focus{
+	background: lighten($primary-color, 10%);
+	color:darken($primary-color, 40%); 
+	text-decoration: none;
+	border-bottom: 1px dotted darken($primary-color, 40%);
+}
+p a:active{
+	color: $secondary-color;
+	text-decoration: none;
+}

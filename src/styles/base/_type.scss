@@ -1,0 +1,32 @@
+// -------------------------------
+// Global Font Styles
+// -------------------------------
+
+html { 
+	font-size: 100%; 
+	@media #{$break-mid} { font-size: 90%; }
+	@media #{$break-small} { font-size: 80%; }
+}
+
+body{
+	font-size: 1.3rem;
+	@include sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+	@include sans-serif;
+	line-height:3rem; 
+}
+
+h1 { font-size: 2.8rem; text-transform: uppercase; font-weight: 500; }
+h2 { font-size: 2.1rem; }
+h3 { font-size: 1.7rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1.0rem; }
+
+p  { 
+	@include margin-standard; 
+	@include sans-serif;
+	line-height:2.2rem;  
+}
