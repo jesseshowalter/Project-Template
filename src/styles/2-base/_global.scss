@@ -3,17 +3,6 @@
 // -------------------------------
 *{ box-sizing: border-box; }
 
-body{ background: white; }
-
-.wrapper{ 
-	@include clearfix;
-	@include maxWidth;
-}
-
-section{ clear: both; }
-
-img{ width: 100%; }
-
 ::selection 	{ background: lighten($primary-color, 10%); color: white; } /* Safari */ 
 ::-moz-selection { background:lighten($primary-color, 10%);  color: white; } /* Firefox */
 

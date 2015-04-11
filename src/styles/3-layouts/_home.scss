@@ -1,0 +1,22 @@
+// erase this and begin
+body{
+	background:$neutral-color;
+}
+
+header{
+	background:$primary-color;
+	color:white;
+	padding:40px 0;
+	text-align: center;
+}
+
+.wrapper{
+	@include outer-container;
+	@include clearfix;
+
+	.box{
+		background:$secondary-color;
+		@include size(5em);
+		@include span-columns(6);
+	}
+}

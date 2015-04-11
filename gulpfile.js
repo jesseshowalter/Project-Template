@@ -23,9 +23,9 @@ var gulp = require('gulp'),
 // Compiles all Scss files
 gulp.task('styles', function() {
     return sass('src/styles/main.scss') 
-    .on('error', function (err) {
-      console.error('Error!', err.message);
-   })
+   //  .on('error', function (err) {
+   //    console.error('Error!', err.message);
+   // })
         .pipe(plumber())
         // .pipe(sass({ style: 'compressed' }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
