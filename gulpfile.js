@@ -20,20 +20,7 @@ var gulp = require('gulp'),
 // Default Tasks (Can be run standalone)
 // --------------------------------------------
 
-// // Compiles all Scss files
-// gulp.task('styles', function(){
-//     return sass('src/styles/**/*.scss')
-//         .pipe(plumber())
-//         .pipe(sass({ 
-//             style: 'compressed' 
-//         }))
-//         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-//         .pipe(gulp.dest('build/styles'))
-//         .pipe(minifycss())
-//         .pipe(gulp.dest('build/styles'))
-//         .pipe(livereload());
-// });
-
+// Compiles all Scss files
 gulp.task('styles', function() {
     return sass('src/styles/main.scss') 
     .on('error', function (err) {
