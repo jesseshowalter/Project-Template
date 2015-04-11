@@ -1,16 +1,6 @@
 // *************
-// Layout mixins
+// Custom mixins
 // *************
-
-@mixin maxWidth{
-	max-width: 1400px;
-	padding: 60px;
-	margin: 0 auto;
-	
-	@media #{$break-mid} {
-		padding: 20px;
-	}
-}
 @mixin overlay{
 	display: block;
 	position: relative;
@@ -29,28 +19,6 @@
 		bottom:0;
 	}
 }
-@mixin margin-standard{
-	margin:1.2rem 0; 
-}
-
-
-
-
-// *************
-// Typography mixins
-// *************
-@mixin serif{
-	font-family: $serif;
-	font-weight:100;
-}
-
-@mixin sans-serif{
-	font-family: $sans-serif;
-	font-weight:100;
-}
-
-
-
 
 // *************
 // Transition mixins

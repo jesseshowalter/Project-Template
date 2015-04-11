@@ -1,4 +1,3 @@
-// erase this and begin
 body{
 	background:$neutral-color;
 }
@@ -6,17 +5,26 @@ body{
 header{
 	background:$primary-color;
 	color:white;
-	padding:40px 0;
+	padding:40px;
 	text-align: center;
 }
 
+
+
 .wrapper{
 	@include outer-container;
-	@include clearfix;
+	@include clearfix;	
 
 	.box{
-		background:$secondary-color;
-		@include size(5em);
+		background:rgba(0,0,0, 0.8);
+		border:1px solid rgba(0,0,0, 0.9);
+		height:100px;
+		margin-top:30px;
 		@include span-columns(6);
+		@include omega(2n);
+
+		@include media($mobile) {
+	      @include span-columns(4);
+	    }
 	}
 }

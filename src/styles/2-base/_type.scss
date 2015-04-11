@@ -4,17 +4,17 @@
 
 html { 
 	font-size: 100%; 
-	@media #{$break-mid} { font-size: 90%; }
-	@media #{$break-small} { font-size: 80%; }
+	// @media #{$break-mid} { font-size: 90%; }
+	// @media #{$break-small} { font-size: 80%; }
 }
 
 body{
 	font-size: 1.3rem;
-	@include sans-serif;
+	font-family: $helvetica;
 }
 
 h1, h2, h3, h4, h5, h6{
-	@include sans-serif;
+	font-family: $helvetica;
 	line-height:3rem; 
 }
 
@@ -26,7 +26,6 @@ h5 { font-size: 1.2rem; }
 h6 { font-size: 1.0rem; }
 
 p  { 
-	@include margin-standard; 
-	@include sans-serif;
+	font-family: $helvetica;
 	line-height:2.2rem;  
 }
