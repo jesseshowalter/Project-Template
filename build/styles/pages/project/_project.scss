@@ -1,0 +1,9 @@
+@import 'project-intro';
+@import 'project-details';
+@import 'project-case-study';
+@import 'project-photo-sections';
+
+#project #cta-bar{
+	background:darken($secondary-color, 3%);
+	border-bottom:1px solid lighten($secondary-color, 10%);
+}

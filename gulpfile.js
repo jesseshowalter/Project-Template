@@ -121,6 +121,7 @@ gulp.task('html', function() {
 // Watches all files and reacts
 gulp.task('watch', function(){
     var server = livereload();
+    livereload.listen();
     gulp.watch('src/scripts/*.js', ['scripts']);
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/*.html', ['html']);
