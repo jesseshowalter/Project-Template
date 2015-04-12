@@ -9,7 +9,9 @@ header{
 	text-align: center;
 }
 
-
+img{
+	width:100%;
+}
 
 .wrapper{
 	@include outer-container;
@@ -18,7 +20,7 @@ header{
 	.box{
 		background:rgba(0,0,0, 0.8);
 		border:1px solid rgba(0,0,0, 0.9);
-		height:100px;
+		height:150px;
 		margin-top:30px;
 		@include span-columns(6);
 		@include omega(2n);
