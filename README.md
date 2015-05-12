@@ -1,0 +1,3 @@
+# Starter Project Template
+
+This project template includes basic architecture...
