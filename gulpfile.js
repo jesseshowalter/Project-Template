@@ -1,32 +1,32 @@
 // --------------------------------------------
 // Dependencies
 // --------------------------------------------
-var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    plumber = require('gulp-plumber'),
-    livereload = require('gulp-livereload'),
-    uglify = require('gulp-uglify'),
-    concat = require('gulp-concat'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    notify = require("gulp-notify"),
-    imagemin = require('gulp-imagemin'),
-    pngcrush = require('imagemin-pngcrush');
-    
+var gulp =          require('gulp'),
+    sass =          require('gulp-ruby-sass'),
+    plumber =       require('gulp-plumber'),
+    uglify =        require('gulp-uglify'),
+    concat =        require('gulp-concat'),
+    autoprefixer =  require('gulp-autoprefixer'),
+    minifycss =     require('gulp-minify-css'),
+    rename =        require('gulp-rename'),
+    notify =        require("gulp-notify"),
+    imagemin =      require('gulp-imagemin'),
+    pngcrush =      require('imagemin-pngcrush'),
+    livereload =    require('gulp-livereload');
+
 
 
 // --------------------------------------------
 // Default Tasks (Can be run standalone)
 // --------------------------------------------
 
-// Compiles all Scss files
+//Compiles all Scss files
 gulp.task('styles', function(){
-    gulp.src('src/styles/**/*.scss')
+    return sass('src/styles/main.scss')
         .pipe(plumber())
-        .pipe(sass({ 
-            style: 'compressed' 
-        }))
+
+        .pipe(concat('main.css'))
+
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('build/styles'))
         .pipe(minifycss())
@@ -49,23 +49,9 @@ gulp.task('images', function () {
         .pipe(livereload());
 });
 
-// Compress projects task
-gulp.task('projects', function () {
-    gulp.src('src/projects/**')
-        .pipe(plumber())
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngcrush()]
-        }))
-        .pipe(gulp.dest('build/projects'))
-        .pipe(notify("Completed Gulping your Projects!"))
-        .pipe(livereload());
-});
-
 
 //Concatnate and Compressn Vendor .js Task
-gulp.task('vendors', function() {  
+gulp.task('vendors', function() {
     gulp.src(
         [
             'src/scripts/vendors/jquery.min.js',
@@ -105,6 +91,9 @@ gulp.task('html', function() {
 // --------------------------------------------
 // Stand Alone Tasks
 // --------------------------------------------
+
+var livereload = require('gulp-livereload');
+
 // Watches all files and reacts
 gulp.task('watch', function(){
     var server = livereload();
