@@ -21,19 +21,19 @@ var gulp = require('gulp'),
 // --------------------------------------------
 
 // Compiles all Scss files
-gulp.task('styles', function() {
-    return sass('src/styles/main.scss') 
-   //  .on('error', function (err) {
-   //    console.error('Error!', err.message);
-   // })
+gulp.task('styles', function(){
+    gulp.src('src/styles/**/*.scss')
         .pipe(plumber())
-        // .pipe(sass({ style: 'compressed' }))
+        .pipe(sass({ 
+            style: 'compressed' 
+        }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
         .pipe(gulp.dest('build/styles'))
         .pipe(minifycss())
         .pipe(gulp.dest('build/styles'))
         .pipe(livereload());
 });
+
 
 // Compress images task
 gulp.task('images', function () {
@@ -108,7 +108,6 @@ gulp.task('html', function() {
 // Watches all files and reacts
 gulp.task('watch', function(){
     var server = livereload();
-    livereload.listen();
     gulp.watch('src/scripts/*.js', ['scripts']);
     gulp.watch('src/styles/**/*.scss', ['styles']);
     gulp.watch('src/*.html', ['html']);

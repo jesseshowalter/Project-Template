@@ -15,7 +15,7 @@ img{
 
 .wrapper{
 	@include outer-container;
-	@include clearfix;	
+	@include clearfix;
 
 	.box{
 		background:rgba(0,0,0, 0.8);
